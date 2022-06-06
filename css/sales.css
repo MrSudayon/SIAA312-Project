@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family:san serif;
+}
+
+body {
+    min-height: 100vh;
+	font-family:'San serif';
+}
+
+.usericon{
+	height:21%;
+	width:50%;
+	position:absolute;
+	margin-left:25%;
+	margin-top:10%;
+	background-image: linear-gradient(#ffae42, #ff4500);
+	border-radius:75px;
+}
+.mainheader{
+	font-family:san serif;
+	font-size: 2em;
+	position:relative;
+	margin-left:0px;
+	margin-top:0px;
+	color:white;
+	background-color:black;
+	width:100%;
+	min-width:480px;
+	max-height:5vw;
+}
+.header{
+	font-size: 3em;
+	position:relative;
+	margin-left:3%;
+	margin-top:2%;
+}
+
+.logopng{
+	height:20%;
+	width:45%;
+	position:relative;
+	margin-left:30%;
+	margin-top:30px;
+}
+
+a:link {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+}
+.prodcon{
+	height:38vh;
+	width:95%;
+	background-color:#DCDCDC;
+	position:relative;
+	margin-top:1vw;
+	margin-left:3%;
+	display:block;
+	overflow: auto;
+	min-height: 28vh;
+	min-width: 100vh;
+	border-radius: 20px;
+	border: 1px solid;
+	border-color: black;
+}
+
+
+.imglbl{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:50px;
+	margin-left:8%;
+	color:black;
+	overflow: hidden;
+}
+.inimg{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:40px;
+	margin-left:1%;
+}
+
+.lblname{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:40px;
+	margin-left:1%;
+	color:black;
+}
+
+.inputname{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:40px;
+	margin-left:1%;
+}
+.lblcat{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:6%;
+	color:black;
+}
+.inputcat{
+	width:249px;
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:1%;
+}
+.lblp{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:15.3%;
+	color:black;
+}
+.inputp{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:1%;
+}
+.lbla{
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:4.2%;
+	color:black;
+
+}
+.inputa{
+	width:249px;
+	font-family:san serif;
+	font-size:1.2em;
+	position:relative;
+	margin-top:15px;
+	margin-left:1%;
+}
+
+.addbut{
+	font-family:san serif;
+	font-size:1.2em;
+	font-weight: bold;
+	color:black;
+	border-color:none;
+	border-style:none;
+	height:40px;
+	position:relative;
+	margin-top:10px;
+	width:150px;
+	background-color:orange;
+	border-radius: 20px;
+}
+.addbut:hover {
+	color: rgba(255, 255, 255, 1);
+	box-shadow: 0 5px 15px rgba(255,165,0, .5);
+}
+.btn{
+	background:#e8850c ;
+	color: white;
+	padding: 5px 0px;
+	text-align: center;
+	display: flex;
+}
+
+.btn:hover{
+	color: #e8850c;
+	background:white ;
+	 padding: 3px 0px;
+	 border: 2px solid white;
+}
+
+.side-menu {
+    position: fixed;
+	background-image: linear-gradient(#ffae42, #ff4500);
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+	box-shadow: 0 5px 15px rgb(0,0,0);
+	padding-right: 10px;
+}
+.side-menu li {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.side-menu li:hover{
+	background-color:rgb(90, 90, 90);
+	margin-left: 5%;
+	color:white;
+	border-radius: 20px;
+}
+
+@media screen and (max-width: 1050px) {
+    .side-menu li {
+        font-size: 18px;
+    }
+	.side-menu h1 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .side-menu li span {
+        display: none;
+    }
+    .side-menu {
+        align-items: center;
+    }
+    .side-menu li img {
+        width: 40px;
+        height: 40px;
+    }
+    .side-menu li:hover {
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+
+@media screen and (max-width:536px) {
+    .brand-name h1 {
+        font-size: 16px;
+    }
+    .container .content .cards {
+        justify-content: center;
+    }
+    .side-menu li img {
+        width: 30px;
+        height: 30px;
+    }
+    .container .content .content-2 .recent-payments table th:nth-child(2),
+    .container .content .content-2 .recent-payments table td:nth-child(2) {
+        display: none;
+    }
+}
+li{
+	list-style: none;
+
+}
+.container2{
+	position:relative;
+	margin-left:20%;
+	width:80%;
+	display:inline-block;
+	list-style:none;
+	min-width:1000px;
+	border-radius: 20px 20px 0px 0px;
+	
+}
+.scon{
+	position:relative;
+	margin-top:2%;
+	margin-left:3%;
+	padding:20px;
+	background-image: linear-gradient(#ffae42, #ff4500);
+	border: 1px solid;
+	border-color: black;
+	width:95%;
+	border-radius: 20px 20px 0px 0px;
+	display:block;
+	overflow: auto;
+}
+.searchtxt{
+	
+	position:relative;
+	font-family:san serif;
+	font-size:1.2em;
+	color:black;
+	margin-left:35%;
+		
+}
+.searchbut{
+	
+	position:relative;
+	font-family:san serif;
+	font-size:1.2em;
+	height:29px;
+	color:black;
+	background-color:orange;
+	border:none;
+}	
+.tablein{
+	position:relative;
+	margin-top:2%;
+	margin-left:3%;
+	background-color:black;
+    table-layout: relative;
+    border-collapse: collapse;
+	border-color:black;
+	width:95%;
+	display:block;
+	
+}
+
+.tablein tbody{
+	width: 100%;
+	display:block;
+	overflow: auto;
+	height: auto;
+}
+
+.tablein thead tr {
+	display: block;
+	width:100%;
+}
+
+.tablein thead {
+	background: black;
+	color:black;
+}
+
+.tablein th, .tablein td {
+	text-align: center;
+	width: 15%;
+}
+
+.tablein2{
+	position:relative;
+	margin-top:2%;
+	margin-left:3%;
+	background-color:black;
+    table-layout: relative;
+    border-collapse: collapse;
+	border-color:black;
+	width:95%;
+	display:block;
+	
+}
+.tablein2 tbody{
+	width: 100%;
+	display:block;
+	overflow: auto;
+	height: auto;
+}
+
+.tablein2 thead tr {
+	display: block;
+	width:100%;
+}
+
+.tablein2 thead {
+	background: black;
+	color:black;
+}
+
+.tablein2 th, .tablein td {
+	text-align: center;
+	padding: 1%;
+	width: 8%;
+}
+
+.tablein1{
+	position:relative;
+	margin-top:2%;
+	margin-left:3%;
+	background-color:black;
+    table-layout: relative;
+    border-collapse: collapse;
+	border-color:black;
+	width:95%;
+	display:block;
+	
+}
+
+.tablein1 tbody{
+	width: 100%;
+	display:block;
+	overflow: auto;
+	height: auto;
+}
+
+.tablein1 thead tr {
+	display: block;
+	width:100%;
+}
+
+.tablein1 thead {
+	background: white;
+	color:black;
+}
+
+.tablein1 th, .tablein1 td {
+	text-align: center;
+	width: 25%;
+	padding: 6px;
+}

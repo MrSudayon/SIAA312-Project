@@ -1,0 +1,131 @@
+body{
+	background-color:#ffae42;
+	margin:0px;
+	font-family: 'san serif';
+    width:100%;
+    min-width:1250px;
+    height:auto;
+}
+.mainheader{
+	font-family:san serif;
+	font-size: 2em;
+	position:fixed;
+	margin-top:0px;
+	text-align:center;
+	color:white;
+	background-color:black;
+	width:100%;
+}
+.tagline{
+	margin-top:90px;
+	font-size:1.2em;
+}
+.logo{
+	margin-top:50px;
+	height:180px;
+	width:220px;
+}
+.cont{
+	background-image: linear-gradient(#ffae42, #ff4500);
+	box-shadow: 0 5px 15px rgb(0,0,0);
+	height:500px;
+	width:48%;
+	position:absolute;
+	margin-left:33%;
+	margin-top:50px;
+	border-radius: 20px;
+	border: 1px solid;
+	border-color: black;
+
+}
+.contleft{
+	background-image: linear-gradient(#ffae42, #ff4500);
+	box-shadow: 0 5px 15px rgb(0,0,0);
+	height:500px;
+	max-height: auto;
+	width:20%;
+	position:absolute;
+	margin-left:15%;
+	margin-top:50px;
+	border-radius: 20px;
+}
+
+.o_content {
+	height:550px;
+	align-items: center;
+	position: relative;
+	padding: 3%;
+}
+
+.logopng{
+	height:300px;
+	width:400px;
+	margin-left:150px;
+	margin-top:130px;
+}
+/*
+.adduser{
+	height:100px;
+	width:100px;
+	position:fixed;
+	margin-left:270px;
+	margin-top:20px;
+	background-image: linear-gradient(#ffae42, #ff4500);
+	border-radius:75px;
+}*/
+.createlbl{
+	color:black;
+	font-size:3em;
+	text-align: center;
+}
+
+#maincontholder {
+	padding: 5px;
+	position: relative;
+	height: 700px;
+	margin-top:50px;
+	width: 90%;
+}
+.required {
+	display: flex;
+	margin: 0;
+
+	width: 4%;
+}	
+.terms {
+	color:black;
+	font-size:1.2em;
+	position: relative;
+	display: flex;
+	left: 190px;
+}
+
+.btncreate{
+	background-color:orange;
+	width:480px;
+	position: relative;
+	color:black;
+	cursor: pointer;
+	margin-top:10px;
+	font-size:1.3em;
+	border-radius: 20px;
+}
+.btncreate:hover {
+	color: rgba(255, 255, 255, 1);
+	box-shadow: 0 5px 15px rgba(255,165,0, .5);
+}
+
+table {
+	padding: 2%;
+	font-size: 1.2em;
+}
+
+input[type=text],[type=password],[type=email] {
+	padding: 5px;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+input[type=text]:focus-within ,[type=password]:focus-within ,[type=email]:focus-within {
+	background-color: #ddd;
+}
