@@ -152,15 +152,15 @@ if(isset($_POST['create'])){
                 $mail->isSMTP();
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = "tls";
-                $mail->Host = "smtp.sendgrid.net";
-                $mail->Port = "2525";
+                $mail->Host = "####";
+                $mail->Port = "####";
                 //$mail->Host = "mail.smtp2go.com";
-                $mail->Username = "apikey";
-                $mail->Password = "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";
+                $mail->Username = "####";
+                $mail->Password = "####";
                     
                 //$mail->SMTPDebug=true;
         
-                $mail->setFrom('fpsudayon5655ant@student.fatima.edu.ph','Boss-B Burgers');
+                $mail->setFrom('####','####');
                 $mail->addAddress($email,$username);
                 $mail->isHTML(true);
         
