@@ -1,5 +1,4 @@
-
-<?php require_once ('auth.php');?>
+<?php require ('auth.php');?>
 <?php include ('../dbase/dbaseconnection.php');?>
 
 
@@ -399,21 +398,13 @@ html {
 
 <body>
 
-
-
-
 <div class="row1">
-<div class="header1">
-	<h1>Order status</h1>
+  <div class="header1">
+    <h1>Order status</h1>
+  </div>
 </div>
-
-  
-</div>
-<div class="row2">
-
-
-                 
-         
+<div class="row2">               
+        
 <style>
 table {
   border-collapse: collapse;
@@ -447,11 +438,12 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>Remarks</th>
 	</tr>
 <?php
-		$id=$_SESSION['SESS_MEMBER_ID'];
-			
+		
+    $id_no=$_SESSION['SESS_MEMBER_ID'];
+    
 		$total=0;
     
-		$query=mysqli_query($conn,"select * from cart where C_ID='$id' and status='Approved' or status='On Delivery' or status='Waiting for Approval' order by ID")or die(mysqli_error($conn));
+		$query=mysqli_query($conn,"select * from cart where C_ID='$id_no' and (status='Approved' or status='On Delivery' or status='Waiting for Approval') order by ID")or die(mysqli_error($conn));
 		while($row=mysqli_fetch_array($query)){
     $total =+ $row['total'];
     

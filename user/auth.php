@@ -9,19 +9,9 @@ session_start();
 			exit();
 		</script>	
 	<?php
-		header("refresh:0;url=signin.php");
+		header("refresh:0;url=visitor_dashb.php");
 	}	
 
 ?>
-<!--
-	session_start();
 
-	if(empty($_SESSION['SESS_MEMBER_ID'])):
-		<script>
-			header("location: signin.php");
-			exit();
-		</script>	
-		exit();
-	endif;
--->
 

@@ -6,6 +6,13 @@ body{
     min-width:1250px;
     height:auto;
 }
+
+@media screen and (max-width: 600px) {
+	body {
+		height: 100%;
+		width: 100%;
+	}
+}
 .mainheader{
 	font-family:san serif;
 	font-size: 2em;
@@ -87,10 +94,8 @@ body{
 	width: 90%;
 }
 .required {
-	display: flex;
-	margin: 0;
-
-	width: 4%;
+	display: inline-block;
+	margin: 5;
 }	
 .terms {
 	color:black;

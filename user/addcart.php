@@ -26,7 +26,9 @@ include('../dbase/dbaseconnection.php');
 		{			
 			$date=date("Y-m-d");
 			$sql = mysqli_query($conn,"INSERT INTO cart(C_ID,PROD_ID,qty,total,price,status,date_added) VALUES('$id_no','$prod_id','1','$total','$price','Pending','$date')")or die(mysqli_error($conn));
+			
 			mysqli_free_result($sql);
+
 				echo "<script type='text/javascript'>
 						alert('Successfully Added!');
 					  </script>";

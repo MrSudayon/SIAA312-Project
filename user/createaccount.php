@@ -156,7 +156,8 @@ if(isset($_POST['create'])){
                 $mail->Port = "2525";
                 //$mail->Host = "mail.smtp2go.com";
                 $mail->Username = "apikey";
-                $mail->Password = "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";
+                $mail->Password = "###";
+
                     
                 //$mail->SMTPDebug=true;
         
@@ -171,17 +172,26 @@ if(isset($_POST['create'])){
                 $mail->Body = '<p>Your verification code is: <b style="font-size: 25px;">' .$verify_token. '</b></p>';
                     
                 $mail->send();
-        
+				
+				
                 $add = "INSERT INTO user (EMP_ID,EMP_FNAME,EMP_LNAME,EMP_MI,EMP_CONTACTNUM,EMAILADD,verify_token,FULLADD,POSITION,EMP_UNAME,EMP_PASS,U_STATUS)
 		        			VALUES(null,'$fname','$lname','$mid','$contact','$email','$verify_token','$address','customer','$username','$pass','DEACTIVATED')";
-						
-			    $conn->query($add);
+
+				$sqlcond = mysqli_query($conn, "SELECT * FROM user WHERE U_STATUS = 'DEACTIVATED'");
+				while($row=mysqli_fetch_array($sqlcond)) {		
+					if (!$email == $row['EMAILADD']) {
+						$conn->query($add);
+					} else {
+						mysqli_query ($conn, "DELETE FROM user WHERE user.POSITION='customer' AND user.U_STATUS='DEACTIVATED'");
+						?>
+							<script>
+								alert('Email already existed, please try another one.');
+							</script>
+						<?php
+						header("refresh:0; url = ../user/createaccount.php");
+					}
+				}
 					?>
-					<!--
-						<script>
-							alert("SUCCESSFULLY ADDED")
-						</script>
-					-->
 						<!-- New HTML Form for Verification -->
 						<html>	
 						<head>
@@ -199,6 +209,12 @@ if(isset($_POST['create'])){
 										justify-content: center;
 										align-items: center;
 									}	
+									@media screen and (max-width: 600px){
+										.bg-modal {
+											height: 100%;
+											width: 100%;	
+										}
+									}
 									.modal-content {
 										width: 400px;
 										height: 200px;
@@ -220,25 +236,94 @@ if(isset($_POST['create'])){
 										cursor: pointer;
 										font-size: 1.1em;
 										border-radius: 20px;
+										position: absolute;
+										justify-self: center;
+										left: 35%;
+										display: flex;
+										justify-content: center;
+										justify-items: center;
 									}
+									/**.sub-btn1 {
+										background-color:orange;
+										width:150px;
+										color:black;
+										cursor: pointer;
+										font-size: 1.1em;
+										border-radius: 20px;
+										position: absolute;
+										right: 60;
+									}*/
 								</style>
 								<!-- Verification Modal Section -->
 								<div class="bg-modal">
 									<div class="modal-content">
 										<form action="verify-email.php" method="POST">
 											<h2> Verify your Email </h2>
+									
 											<input type="hidden" name="user" value="<?php echo $username; ?>"/>
-											<p>V-Code Sent here: <input type="text" name="email" value="<?php echo $email; ?>" readonly></input></p>
-											<p>Enter Code here: <input type="text" name="v-code"></input></p>
-											<input type="submit" class="sub-btn" name="submit" value="SUBMIT"/> 
+											<input type="hidden" name="fname" value="<?php echo $fname; ?>"/>
+											<input type="hidden" name="mi" value="<?php echo $mid; ?>"/>
+											<input type="hidden" name="lname" value="<?php echo $lname; ?>"/>
+											<input type="hidden" name="contact" value="<?php echo $contact; ?>"/>
+											<input type="hidden" name="address" value="<?php echo $address; ?>"/>
+											<input type="hidden" name="pass" value="<?php echo $pass; ?>"/>
+
+											<p><center><input type="text" style="width: 80%" name="email" value="<?php echo $email; ?>" readonly/></center></p>
+											<p>Enter Code here: <input type="text" name="v-code" autocomplete="off"></input></p>
+											<input type="submit" class="sub-btn" name="submit" value="SUBMIT"/>
 										</form>
+										<!--<form action="createaccount.php" method="POST">
+											<input type="submit" class="sub-btn1" name="resend" value="RE-SEND"/>		
+										</form>
+										
+											if(isset($_POST['resend'])) {
+												try {
+													$fname=$_POST['fname'];
+													$mid=$_POST['mi'];
+													$lname=$_POST['lname'];
+													$contact=$_POST['contact'];
+													$address=$_POST['address'];
+													$username = $_POST['user'];
+													$pass=$_POST['pass'];
+													$email = $_POST['email'];
+										
+													$mail->isSMTP();
+													$mail->SMTPAuth = true;
+													$mail->SMTPSecure = "tls";
+													$mail->Host = "smtp.sendgrid.net";
+													$mail->Port = "2525";
+													$mail->Username = "apikey";
+													$mail->Password = "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";
+											
+													$mail->setFrom('fpsudayon5655ant@student.fatima.edu.ph','Boss-B Burgers');
+													$mail->addAddress($email,$username);
+													$mail->isHTML(true);
+											
+													$verify_token = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+											
+													$mail->Header = "Verification";
+													$mail->Subject = "Resent Verification from Boss-B Burgers";
+													$mail->Body = '<p>Your verification code is: <b style="font-size: 25px;">' .$verify_token. '</b></p>';
+														
+													$mail->send();
+													
+													$add = "INSERT INTO user (EMP_ID,EMP_FNAME,EMP_LNAME,EMP_MI,EMP_CONTACTNUM,EMAILADD,verify_token,FULLADD,POSITION,EMP_UNAME,EMP_PASS,U_STATUS)
+																VALUES(null,'$fname','$lname','$mid','$contact','$email','$verify_token','$address','customer','$username','$pass','DEACTIVATED')";
+													
+										
+													$conn->query($add);
+												} catch(Exception $e) {
+													echo "Mailer ERROR: " . $mail->ErrorInfo;
+												}
+											}
+										-->
 									</div>
 								</div>
 								<!-- Modal ends here -->
 							</body>
 						</html>
 					<?php
-
+						
         
             }
             catch(Exception $e) {

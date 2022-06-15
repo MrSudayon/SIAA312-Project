@@ -27,6 +27,7 @@ include ("../dbase/dbaseconnection.php");
                         alert ("Please try again!");
                     </script>
                 <?php
+                header("refresh:0; url = ../user/createaccount.php");
             }
         
 	}

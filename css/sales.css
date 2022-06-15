@@ -407,3 +407,39 @@ li{
 	width: 25%;
 	padding: 6px;
 }
+
+.tablein3 {
+	position:relative;
+	margin-top:2%;
+	margin-left:3%;
+	background-color:black;
+    table-layout: relative;
+    border-collapse: collapse;
+	border-color:black;
+	width:95%;
+	display:block;
+	
+}
+
+.tablein3 tbody{
+	width: 100%;
+	display:block;
+	overflow: auto;
+	height: auto;
+}
+
+.tablein3 thead tr {
+	display: block;
+	width:100%;
+}
+
+.tablein3 thead {
+	background: black;
+	color:black;
+}
+
+.tablein3 th, .tablein3 td {
+	text-align: center;
+	width: 18%;
+	padding: 5px;
+}

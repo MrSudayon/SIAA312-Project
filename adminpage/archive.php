@@ -33,7 +33,7 @@
 				<a href="../adminpage/useraccounts.php"><li><img src="reading-book (1).png" alt="">&nbsp;<span>Accounts</span> </li></a>
 				<a href="../adminpage/archive.php"><li><img src="payment.png" alt="">&nbsp;<span>Archives</span> </li></a>
 				<a href="../adminpage/sales.php"><li><img src="payment.png" alt="">&nbsp;<span>Sales</span> </li></a>
-				<li><img src="help-web-button.png" alt="">&nbsp; <span>Logout</span></li>
+				<a href="../user/logout.php"><li><img src="help-web-button.png" alt="">&nbsp; <span>Logout</span></li></a>
 			</ul>
 		</div>
 		<div class="container2">
@@ -43,6 +43,7 @@
 			<div class="scon">
 				<input name="search" class="searchtxt" autocomplete="off" autofocus placeholder="Search product name"><input name="sbut" type=submit class="searchbut" value="Search">
 			</div>
+			
 					<?php
 						if(isset($_POST['sbut'])){
 							
@@ -56,7 +57,7 @@
 
 							if ($result->num_rows > 0) 
 								{		// output data of each row
-									echo "<table border=1 cellpadding=5 class=tablein>";
+									echo "<table border=1 cellpadding=5 class=tablein3>";
 										echo "<thead>";
 											echo "<tbody>";
 												echo "<tr bgcolor=#363636 style='color:white'>";
@@ -71,7 +72,7 @@
 									
 												while($row = $result->fetch_assoc()) 
 												{
-												echo "<tr bgcolor=white>";
+													echo "<tr bgcolor=white>";
 													echo "<th>" . $row["PROD_ID"];
 													?>
 														<th> 
