@@ -152,8 +152,8 @@ if(isset($_POST['create'])){
                 $mail->isSMTP();
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = "tls";
-                $mail->Host = "smtp.sendgrid.net";
-                $mail->Port = "2525";
+                $mail->Host = "#";
+                $mail->Port = "#";
                 //$mail->Host = "mail.smtp2go.com";
                 $mail->Username = "apikey";
                 $mail->Password = "###";
