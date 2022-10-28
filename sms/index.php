@@ -13,7 +13,7 @@
 <?php
 	require $_SERVER['DOCUMENT_ROOT'].'../bossb/sms/vendor/autoload.php';
 	
-	$messagebird = new \MessageBird\Client('GYCvyJnSLlJIcF6qEcDKl5hCx');
+	$messagebird = new \MessageBird\Client('####');
 	$message = new \MessageBird\Objects\Message();
 	$message->originator ='BossB';
 	$message->recipients =array(+639455000760);
