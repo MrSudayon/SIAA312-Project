@@ -161,7 +161,7 @@ if(isset($_POST['create'])){
                     
                 //$mail->SMTPDebug=true;
         
-                $mail->setFrom('fpsudayon5655ant@student.fatima.edu.ph','Boss-B Burgers');
+                $mail->setFrom(#,'Boss-B Burgers');
                 $mail->addAddress($email,$username);
                 $mail->isHTML(true);
         
@@ -272,51 +272,7 @@ if(isset($_POST['create'])){
 											<p>Enter Code here: <input type="text" name="v-code" autocomplete="off"></input></p>
 											<input type="submit" class="sub-btn" name="submit" value="SUBMIT"/>
 										</form>
-										<!--<form action="createaccount.php" method="POST">
-											<input type="submit" class="sub-btn1" name="resend" value="RE-SEND"/>		
-										</form>
 										
-											if(isset($_POST['resend'])) {
-												try {
-													$fname=$_POST['fname'];
-													$mid=$_POST['mi'];
-													$lname=$_POST['lname'];
-													$contact=$_POST['contact'];
-													$address=$_POST['address'];
-													$username = $_POST['user'];
-													$pass=$_POST['pass'];
-													$email = $_POST['email'];
-										
-													$mail->isSMTP();
-													$mail->SMTPAuth = true;
-													$mail->SMTPSecure = "tls";
-													$mail->Host = "smtp.sendgrid.net";
-													$mail->Port = "2525";
-													$mail->Username = "apikey";
-													$mail->Password = "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";
-											
-													$mail->setFrom('fpsudayon5655ant@student.fatima.edu.ph','Boss-B Burgers');
-													$mail->addAddress($email,$username);
-													$mail->isHTML(true);
-											
-													$verify_token = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
-											
-													$mail->Header = "Verification";
-													$mail->Subject = "Resent Verification from Boss-B Burgers";
-													$mail->Body = '<p>Your verification code is: <b style="font-size: 25px;">' .$verify_token. '</b></p>';
-														
-													$mail->send();
-													
-													$add = "INSERT INTO user (EMP_ID,EMP_FNAME,EMP_LNAME,EMP_MI,EMP_CONTACTNUM,EMAILADD,verify_token,FULLADD,POSITION,EMP_UNAME,EMP_PASS,U_STATUS)
-																VALUES(null,'$fname','$lname','$mid','$contact','$email','$verify_token','$address','customer','$username','$pass','DEACTIVATED')";
-													
-										
-													$conn->query($add);
-												} catch(Exception $e) {
-													echo "Mailer ERROR: " . $mail->ErrorInfo;
-												}
-											}
-										-->
 									</div>
 								</div>
 								<!-- Modal ends here -->
